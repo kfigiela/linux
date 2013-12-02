@@ -58,7 +58,7 @@ static const struct soc_enum tlv320aic23_rec_src =
 static const struct soc_enum tlv320aic23_deemph =
 	SOC_ENUM_SINGLE(TLV320AIC23_DIGT, 1, 4, deemph_text);
 
-static const DECLARE_TLV_DB_SCALE(out_gain_tlv, -12100, 100, 0);
+static const DECLARE_TLV_DB_SCALE(out_gain_tlv, -7300, 100, 0);
 static const DECLARE_TLV_DB_SCALE(input_gain_tlv, -1725, 75, 0);
 static const DECLARE_TLV_DB_SCALE(sidetone_vol_tlv, -1800, 300, 0);
 
@@ -101,7 +101,7 @@ static int snd_soc_tlv320aic23_get_volsw(struct snd_kcontrol *kcontrol,
 
 static const struct snd_kcontrol_new tlv320aic23_snd_controls[] = {
 	SOC_DOUBLE_R_RANGE_TLV("Digital Playback Volume", TLV320AIC23_LCHNVOL,
-			 TLV320AIC23_RCHNVOL, 0, 48, 127, 0, out_gain_tlv),
+	 		 TLV320AIC23_RCHNVOL, 0, 48, 127, 0, out_gain_tlv),
 	SOC_SINGLE("Digital Playback Switch", TLV320AIC23_DIGT, 3, 1, 1),
 	SOC_DOUBLE_R("Line Input Switch", TLV320AIC23_LINVOL,
 		     TLV320AIC23_RINVOL, 7, 1, 0),
