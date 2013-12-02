@@ -22,6 +22,8 @@
 
 static int snd_rpi_mbed_init(struct snd_soc_pcm_runtime *rtd)
 {
+	struct snd_soc_codec *codec = rtd->codec;
+	snd_soc_limit_volume(codec, "Digital Playback Volume", 121);
 	return 0;
 }
 
