@@ -102,7 +102,7 @@ static int snd_soc_tlv320aic23_get_volsw(struct snd_kcontrol *kcontrol,
 static const struct snd_kcontrol_new tlv320aic23_snd_controls[] = {
 	SOC_DOUBLE_R_RANGE_TLV("Digital Playback Volume", TLV320AIC23_LCHNVOL,
 	 		 TLV320AIC23_RCHNVOL, 0, 48, 127, 0, out_gain_tlv),
-	SOC_SINGLE("Digital Playback Switch", TLV320AIC23_DIGT, 3, 1, 1),
+    // SOC_SINGLE("Digital Playback Switch", TLV320AIC23_DIGT, 3, 1, 1),
 	SOC_DOUBLE_R("Line Input Switch", TLV320AIC23_LINVOL,
 		     TLV320AIC23_RINVOL, 7, 1, 0),
 	SOC_DOUBLE_R_TLV("Line Input Volume", TLV320AIC23_LINVOL,
